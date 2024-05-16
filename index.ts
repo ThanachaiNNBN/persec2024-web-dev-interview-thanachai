@@ -13,9 +13,9 @@ console.log(Color.HexToRgb("#000"));    // =>{ r: 0, g: 0, b: 0 }
 
 
 // ข้อที่ 2;
-console.log(Sort.ascending(["TH19", "SG20" , "TH2" ]))
+console.log(Sort.descending(["TH19", "SG20" , "TH2" ]))
 // ["TH19", "SG20" , "TH2"] => [ "SG20" , "TH2", "TH19",]
-console.log(Sort.descending(["TH10", "TH3Netflix" , "TH1", "TH7"]))
+console.log(Sort.ascending(["TH10", "TH3Netflix" , "TH1", "TH7"]))
 //  ["TH10", "TH3Netflix" , "TH1", "TH7"] => [ "TH1", "TH3Netflix" , "TH7", "TH10"]
 
 

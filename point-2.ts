@@ -1,5 +1,5 @@
 export class Sort {
-    public static ascending(hex: string[]): string[] {
+    public static descending(hex: string[]): string[] {
         return hex.sort((a, b) => {
             for (var i = 0; i <= a.length && i <= b.length; i++ ) {
                 
@@ -15,7 +15,7 @@ export class Sort {
         });
     }
 
-    public static descending(hex: string[]): string[] {
+    public static ascending(hex: string[]): string[] {
         return hex.sort((a, b) => {
             for (var i = 0; i < a.length; i++) {
 

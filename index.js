@@ -10,9 +10,9 @@ console.log(point_1_1.Color.HexToRgb("#ff9933")); // =>{ r: 255, g: 153, b: 51 }
 console.log(point_1_1.Color.HexToRgb("#FFF")); // =>{ r: 255, g: 255, b: 255 }
 console.log(point_1_1.Color.HexToRgb("#000")); // =>{ r: 0, g: 0, b: 0 }
 // ข้อที่ 2;
-console.log(point_2_1.Sort.ascending(["TH19", "SG20", "TH2"]));
+console.log(point_2_1.Sort.descending(["TH19", "SG20", "TH2"]));
 // ["TH19", "SG20" , "TH2"] => [ "SG20" , "TH2", "TH19",]
-console.log(point_2_1.Sort.descending(["TH10", "TH3Netflix", "TH1", "TH7"]));
+console.log(point_2_1.Sort.ascending(["TH10", "TH3Netflix", "TH1", "TH7"]));
 //  ["TH10", "TH3Netflix" , "TH1", "TH7"] => [ "TH1", "TH3Netflix" , "TH7", "TH10"]
 // ข้อที่ 3;
 var reverseEncoder = new point_3_1.ReverseEncoder();

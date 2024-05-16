@@ -4,7 +4,7 @@ exports.Sort = void 0;
 var Sort = /** @class */ (function () {
     function Sort() {
     }
-    Sort.ascending = function (hex) {
+    Sort.descending = function (hex) {
         return hex.sort(function (a, b) {
             for (var i = 0; i <= a.length && i <= b.length; i++) {
                 if (a.substring(0, i) > b.substring(0, i)) {
@@ -17,7 +17,7 @@ var Sort = /** @class */ (function () {
             return -1;
         });
     };
-    Sort.descending = function (hex) {
+    Sort.ascending = function (hex) {
         return hex.sort(function (a, b) {
             for (var i = 0; i < a.length; i++) {
                 if (a.charAt(i).localeCompare(b.charAt(i)) >= 1) {
