@@ -34,6 +34,8 @@ var ReverseEncoder = /** @class */ (function () {
     function ReverseEncoder() {
     }
     ReverseEncoder.prototype.encode = function (data) {
+        if (!this.isValidText(data))
+            return "Format Error";
         var charList = data.split('');
         var mapText = charList.reduce(function (prev, curr) {
             var text = (TextCompare[curr.toLowerCase()]) ? TextCompare[curr.toLowerCase()] : ",";
@@ -44,6 +46,8 @@ var ReverseEncoder = /** @class */ (function () {
         return alternate.toString().replace(/,/g, ' ');
     };
     ReverseEncoder.prototype.decode = function (data) {
+        if (!this.isValidText(data))
+            return "Format Error";
         var charList = data.split(' ').sort(function (a, b) { return b.localeCompare(a); });
         var text = charList.toString().replace(/,/g, ' ');
         return text.split('').reduce(function (prev, curr) {
@@ -51,6 +55,10 @@ var ReverseEncoder = /** @class */ (function () {
             var toUpper = (curr == curr.toUpperCase()) ? text.toUpperCase() : text;
             return prev + toUpper;
         }, '');
+    };
+    ReverseEncoder.prototype.isValidText = function (data) {
+        var pattern = /^[A-Za-z\s]+$/;
+        return pattern.test(data);
     };
     return ReverseEncoder;
 }());

@@ -30,6 +30,8 @@ enum TextCompare {
 export class ReverseEncoder{
 
     encode(data: string): string{
+        if(!this.isValidText(data)) return "Format Error" 
+        
         const charList = data.split('');
         const mapText = charList.reduce((prev, curr) => {
             const text = ( TextCompare[curr.toLowerCase()] ) ? TextCompare[curr.toLowerCase()] : ",";
@@ -43,6 +45,8 @@ export class ReverseEncoder{
     }
 
     decode(data: string): string{
+        if(!this.isValidText(data)) return "Format Error" 
+
         const charList = data.split(' ').sort((a,b) => b.localeCompare(a));
         const text = charList.toString().replace(/,/g, ' ');
 
@@ -51,5 +55,10 @@ export class ReverseEncoder{
             const toUpper = (curr == curr.toUpperCase()) ? text.toUpperCase() : text;
             return prev + toUpper;
         },'');
+    }
+
+    isValidText(data: string): boolean {
+        const pattern = /^[A-Za-z\s]+$/;
+        return pattern.test(data);
     }
 }
